@@ -73,6 +73,10 @@ let
       fixupPhase = ''
         cp ${./themes/grub/theme.txt} $out/theme.txt
         cp ${bootsplash} $out/background.png
+
+        cp ${./themes/grub/center.png} $out/select_c.png
+        cp ${./themes/grub/edge.png} $out/select_e.png
+        ${pkgs.imagemagickBig}/bin/magick $out/select_e.png -flop $out/select_w.png
         rm -r $out/terminus*.pf2
       '';
     }
