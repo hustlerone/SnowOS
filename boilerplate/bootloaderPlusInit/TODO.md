@@ -1,0 +1,2 @@
+- Automatically generate SVG from nixos branding repo
+- Do the same thing with theme assets to save up on space

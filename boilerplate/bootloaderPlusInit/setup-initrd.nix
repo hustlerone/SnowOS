@@ -69,14 +69,20 @@ let
   bootsplashD = "${bootsplashes}/melted-snow_n.png";
 
   grubTheme = pkgs.minimal-grub-theme.overrideAttrs (
-    finalAttrs: oldAttrs: {
+    finalAttrs: oldAttrs: 
+    let
+      menuCenter = ./themes/grub/center.png;
+      menuEdge = ./themes/grub/edge.png;
+    in
+    {
       fixupPhase = ''
         cp ${./themes/grub/theme.txt} $out/theme.txt
         cp ${bootsplash} $out/background.png
 
-        cp ${./themes/grub/center.png} $out/select_c.png
-        cp ${./themes/grub/edge.png} $out/select_e.png
-        ${pkgs.imagemagickBig}/bin/magick $out/select_e.png -flop $out/select_w.png
+        cp ${menuCenter} $out/select_c.png
+        cp ${menuEdge} $out/select_e.png
+        ${pkgs.imagemagickBig}/bin/magick ${menuEdge} -flop $out/select_w.png
+
         rm -r $out/terminus*.pf2
       '';
     }
