@@ -135,7 +135,7 @@ in
       lib.types.submodule (
         { name, ... }:
         {
-          config.preLVM = lib.mkDefault true;
+
         }
       )
     );

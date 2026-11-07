@@ -13,7 +13,7 @@
     I'm sorry if your machine's ram is in the megabytes.
   */
   boot.kernel.sysctl = {
-    "vm.dirty_bytes" = 126 * 1024 * 1024;
-    "vm.dirty_background_bytes" = 2 * 1024 * 1024;
+    "vm.dirty_bytes" = 48 * 1024 * 1024;
+    "vm.dirty_background_bytes" = 16 * 1024 * 1024;
   };
 }
